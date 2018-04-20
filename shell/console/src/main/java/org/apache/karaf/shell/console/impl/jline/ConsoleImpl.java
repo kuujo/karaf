@@ -183,6 +183,7 @@ public class ConsoleImpl implements Console {
         CommandSessionHolder.unset();
         pipe.interrupt();
         completer.dispose();
+        reader.shutdown();
         if (closedByUser && closeCallback != null) {
             closeCallback.run();
         }
